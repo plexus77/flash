@@ -8,7 +8,7 @@ if ( ! function_exists('flash')) {
      * @param  string|null $message
      * @param  string|null $title
      * @param  string      $level
-     * @return \Laracasts\Flash\FlashNotifier
+     * @return \PSDesign\Flash\FlashNotifier
      */
     function flash($message = null, $title = null, $level = 'info')
     {
