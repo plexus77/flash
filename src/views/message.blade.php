@@ -3,21 +3,16 @@
         @include('flash::modal', [
             'modalClass' => 'flash-modal',
             'title'      => session('flash_notification.title'),
-            'body'       => session('flash_notification.message')
+            'message'       => session('flash_notification.message')
         ])
     @else
-        <div class="alert
-                    alert-{{ session('flash_notification.level') }}
-                    {{ session()->has('flash_notification.important') ? 'alert-important' : '' }}"
-        >
-            @if(session()->has('flash_notification.important'))
-                <button type="button"
-                        class="close"
-                        data-dismiss="alert"
-                        aria-hidden="true"
-                >&times;</button>
-            @endif
-
+        <div class="alert alert-{{ session('flash_notification.level') }} {{ session()->has('flash_notification.important') ? 'alert-important' : '' }}">
+        @if(session()->has('flash_notification.important'))
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+        @endif
+        @if(session()->has('flash_notification.title'))
+            <h4 class="alert-heading">{{ session('flash_notification.title') }}</h4>
+        @endif
             {!! session('flash_notification.message') !!}
         </div>
     @endif

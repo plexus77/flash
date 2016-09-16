@@ -1,4 +1,4 @@
-# Easy Flash Messages for Your Laravel App
+# Easy Flash Messages for Your Laravel App for Bootstrap 4
 
 ## Installation
 
@@ -29,16 +29,17 @@ public function store()
 
 You may also do:
 
-- `flash('Message', 'info')`
-- `flash('Message', 'success')`
-- `flash('Message', 'danger')`
-- `flash('Message', 'warning')`
+- `flash('Message', 'title', 'info')`
+- `flash('Message', 'title', 'success')`
+- `flash('Message', 'title', 'danger')`
+- `flash('Message', 'title', 'warning')`
 - `flash()->overlay('Modal Message', 'Modal Title')`
-- `flash('Message')->important()`
+- `flash('Message', 'title')->important()`
 
 Behind the scenes, this will set a few keys in the session:
 
 - 'flash_notification.message' - The message you're flashing
+- 'flash_notification.title' - The title you're flashing
 - 'flash_notification.level' - A string that represents the type of notification (good for applying HTML class names)
 
 With this message flashed to the session, you may now display it in your view(s). Maybe something like:
