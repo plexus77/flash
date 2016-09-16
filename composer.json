@@ -24,7 +24,7 @@
             "Laracasts\\Flash": "src/"
         },
         "files": [
-            "src/Laracasts/Flash/functions.php"
+            "src/Flash/functions.php"
         ]
     },
     "minimum-stability": "stable"
